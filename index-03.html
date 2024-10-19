@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="babel.min.js"></script>
+
+    <script type="text/babel">
+        var root;
+        var counter = 0;
+        function onBtnRenderClick(){
+            // DOM
+            /* 
+            const h1Ele = document.createElement("h1")
+            h1Ele.setAttribute("id","heading-1")
+            h1Ele.innerText = "Welcome to React!"
+
+            const divRoot = document.getElementById('root');
+            divRoot.appendChild(h1Ele); 
+            */
+            
+            /* 
+            counter++;
+            // Browser DOM
+            document.getElementById('spanCounter').innerText = counter; 
+            */
+
+            // React 
+             counter++;
+            const appEle = (
+                <div>
+                    <h1>Welcome to React!</h1>
+                    <hr/>
+                    <div>
+                        <h3>Introduction</h3>
+                        <p>Aliqua officia est amet eu nulla magna consectetur anim. Proident irure cillum cupidatat esse et voluptate sint sunt reprehenderit ex. Sint sint aute aute incididunt ex mollit mollit sit. Lorem id anim et in consectetur tempor. Reprehenderit Lorem aliquip magna magna nulla deserunt reprehenderit est aliqua est fugiat amet excepteur magna. Veniam id et exercitation reprehenderit.</p>
+                        <p>Ipsum occaecat sunt amet voluptate. Aliquip velit culpa sit elit aliquip proident officia exercitation sit. Excepteur id eu consectetur mollit magna dolor laboris eiusmod incididunt sit ipsum consequat adipisicing. Proident irure in culpa eiusmod fugiat fugiat consequat aliqua. Dolor nulla laboris duis Lorem ad velit eu voluptate laboris dolore exercitation.</p>
+                        <p>Fugiat cillum amet exercitation deserunt eu do laboris elit ex officia nostrud incididunt. Sunt voluptate consectetur minim dolor. Occaecat in exercitation esse Lorem cupidatat proident ut. Incididunt est labore exercitation ut duis occaecat sit cillum nulla. Culpa deserunt esse sunt adipisicing est adipisicing.</p>
+                    </div>
+                    <div>
+                        <h3>Advantages</h3>
+                        <ul>
+                            <li>Declarative</li>
+                            <li>Efficient</li>
+                        </ul>
+                    </div>
+                </div>
+            )
+            root.render(appEle)
+
+        }
+        function onDocumentLoad(){
+            var btnRender = document.getElementById('btnRender');
+            btnRender.addEventListener('click', onBtnRenderClick);
+
+            root = ReactDOM.createRoot(document.getElementById('root'))
+        }
+        window.addEventListener('load', onDocumentLoad)
+    </script>
+</head>
+<body>
+    <button id="btnRender">Render</button>
+    
+    <div id="root">
+       
+    </div>
+</body>
+</html>

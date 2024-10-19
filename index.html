@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script>
+        var root;
+        var counter = 0;
+        function onBtnRenderClick(){
+            // DOM
+            /* 
+            const h1Ele = document.createElement("h1")
+            h1Ele.setAttribute("id","heading-1")
+            h1Ele.innerText = "Welcome to React!"
+
+            const divRoot = document.getElementById('root');
+            divRoot.appendChild(h1Ele); 
+            */
+            
+            counter++;
+            // Browser DOM
+            document.getElementById('spanCounter').innerText = counter;
+
+            // React 
+            const h1Ele = React.createElement('h1', { id : 'heading-1' }, "Welcome to React! - " + counter)
+            root.render(h1Ele)
+
+        }
+        function onDocumentLoad(){
+            var btnRender = document.getElementById('btnRender');
+            btnRender.addEventListener('click', onBtnRenderClick);
+
+            root = ReactDOM.createRoot(document.getElementById('root'))
+        }
+        window.addEventListener('load', onDocumentLoad)
+    </script>
+</head>
+<body>
+    <button id="btnRender">Render</button>
+    <div>
+        <span>Counter :</span>
+        <span id="spanCounter"></span>
+    </div>
+    <div id="root">
+       
+    </div>
+</body>
+</html>

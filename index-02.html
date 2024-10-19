@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script>
+        var root;
+        var counter = 0;
+        function onBtnRenderClick(){
+            // DOM
+            /* 
+            const h1Ele = document.createElement("h1")
+            h1Ele.setAttribute("id","heading-1")
+            h1Ele.innerText = "Welcome to React!"
+
+            const divRoot = document.getElementById('root');
+            divRoot.appendChild(h1Ele); 
+            */
+            
+            /* 
+            counter++;
+            // Browser DOM
+            document.getElementById('spanCounter').innerText = counter; 
+            */
+
+            // React 
+             counter++;
+            const appEle = React.createElement('div', null, 
+                React.createElement('h1', null, 'Welcome to React!'),
+                React.createElement('hr'),
+                React.createElement('div', null, 
+                    React.createElement('span', null, 'Counter : '),
+                    React.createElement('span', null, counter)
+                ),
+                React.createElement('div', null, 
+                    React.createElement('h3', null, 'Introduction'),
+                    React.createElement('p', null, 'Ut adipisicing in Lorem qui ullamco in ad ut ut ea. Elit amet labore eu occaecat cupidatat tempor ex consectetur officia. Ad ad non id cupidatat sit tempor. Ex sint culpa cupidatat amet nulla occaecat ad aliqua mollit mollit est. Ullamco do pariatur esse officia ipsum non id voluptate elit tempor.'),
+                    React.createElement('p', null, 'Nulla laboris consectetur officia sint voluptate. Incididunt incididunt adipisicing et aliquip tempor deserunt incididunt commodo. Do voluptate sit excepteur fugiat non est non consequat. Nisi deserunt dolore est aute amet est ipsum elit deserunt. Minim dolore nulla pariatur laborum ut quis culpa esse culpa non in adipisicing. Elit consectetur minim dolore adipisicing sunt cillum irure.'),
+                    React.createElement('p', null, 'Amet ex irure laborum qui labore proident cupidatat veniam ipsum laboris sit. Cupidatat nisi aliquip duis sunt ea id eu nostrud minim commodo deserunt duis sunt. Officia laboris aliqua duis officia anim aute esse fugiat id et dolore laboris sunt. Aute tempor excepteur elit est voluptate commodo laboris. Duis pariatur exercitation labore irure ex sit excepteur pariatur voluptate nulla ea sunt. Eu incididunt cillum enim labore qui duis ea reprehenderit proident non ipsum Lorem sunt.'),
+                ),
+                React.createElement('div', null, 
+                    React.createElement('h3', null, 'Advantages'),
+                    React.createElement('ul', null, 
+                        React.createElement('li', null, 'Declarative'),
+                        React.createElement('li', null, 'Efficient')
+                    )
+                )
+            )
+            root.render(appEle)
+
+        }
+        function onDocumentLoad(){
+            var btnRender = document.getElementById('btnRender');
+            btnRender.addEventListener('click', onBtnRenderClick);
+
+            root = ReactDOM.createRoot(document.getElementById('root'))
+        }
+        window.addEventListener('load', onDocumentLoad)
+    </script>
+</head>
+<body>
+    <button id="btnRender">Render</button>
+    
+    <div id="root">
+       
+    </div>
+</body>
+</html>
