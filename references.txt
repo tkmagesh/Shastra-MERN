@@ -1,0 +1,5 @@
+React & Redux Videos
+    https://bit.ly/react-videos
+
+Node.js
+    https://bit.ly/node-training-videos
